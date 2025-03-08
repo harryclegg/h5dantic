@@ -1,0 +1,35 @@
+[project]
+name = "h5dantic"
+version = "0.1.0"
+description = "Dump and load Pydantic models to/from HDF5 files."
+readme = "README.md"
+authors = [
+    { name = "Harry Clegg", email = "23313061+harryclegg@users.noreply.github.com" }
+]
+
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.1.0",
+    "pytest>=8.3.5",
+    "ruff>=0.9.10",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff.lint]
+pydocstyle.convention = "google"
+fixable = ["ALL"]
+select = ["ALL"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["S101"]
+
+[tool.ruff.format]
+docstring-code-format = true
