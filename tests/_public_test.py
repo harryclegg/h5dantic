@@ -1,5 +1,10 @@
-import h5dantic
+from h5dantic import HDFModel
 
 
-def test_magic_string() -> None:
-    assert h5dantic.hello() == "Hello from h5dantic!"
+class _TestModel(HDFModel):
+    a: int
+
+
+def _test_constructability() -> None:
+    m = _TestModel(a=1)
+    assert m is not None

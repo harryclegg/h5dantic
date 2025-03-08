@@ -1,10 +1,5 @@
 """Public library exports."""
 
+__all__ = ["HDFModel"]
 
-def hello() -> str:
-    """Test function.
-
-    Returns:
-        str: Test string.
-    """
-    return "Hello from h5dantic!"
+from h5dantic.model import HDFModel
